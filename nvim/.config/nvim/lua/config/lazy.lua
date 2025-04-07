@@ -15,26 +15,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  spec = {
+  spec = €ý-{
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- extras
-    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.util.dot" },
+    { import = "lazyvim.plugins.extras.u€ý-til.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.editor.mini-diff" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    -- { import = "lazyvim.plugins.extras.ai.copilot" },
+    -- { import = "lazyvim.plugins.extras.ai.copilot-chat" },
+    -- languages
     { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.prisma" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.vue" },
-    { import = "lazyvim.plugins.extras.lang.yaml" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
-    -- { import = "lazyvim.plugins.extras.formatting.prettier" },
-    { import = "lazyvim.plugins.extras.lsp.neoconf" },
-    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-    { import = "lazyvim.plugins.extras.editor.mini-diff" },
-    { import = "lazyvim.plugins.extras.editor.dial" },
-    -- { import = "lazyvim.plugins.extras.ai.copilot" },
-    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
     -- import/override with your plugins
     { import = "plugins" },
   },
