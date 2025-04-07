@@ -15,12 +15,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  spec = €ý-{
+  spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- extras
     { import = "lazyvim.plugins.extras.util.dot" },
-    { import = "lazyvim.plugins.extras.u€ý-til.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.editor.mini-diff" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     -- { import = "lazyvim.plugins.extras.ai.copilot" },
