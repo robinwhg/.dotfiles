@@ -1,5 +1,8 @@
 return {
   "folke/snacks.nvim",
+  keys = {
+    { "<c-e>", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+  },
   opts = {
     terminal = {
       border = "rounded",
