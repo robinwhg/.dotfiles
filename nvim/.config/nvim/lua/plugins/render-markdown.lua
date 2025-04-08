@@ -4,8 +4,5 @@ return {
     heading = {
       backgrounds = {},
     },
-    dash = {
-      highlight = "white",
-    },
   },
 }
