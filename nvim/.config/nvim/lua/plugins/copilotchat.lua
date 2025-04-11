@@ -10,7 +10,7 @@ return {
       answer_header = "  Copilot ",
       model = "claude-3.7-sonnet",
       window = {
-        width = 48,
+        width = 64,
       },
     }
   end,
