@@ -1,7 +1,5 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
-  branch = "main",
-  cmd = "CopilotChat",
   opts = function()
     local user = vim.env.USER or "User"
     return {
@@ -9,6 +7,11 @@ return {
       question_header = "  " .. user .. " ",
       answer_header = "  Copilot ",
       model = "claude-3.7-sonnet",
+      sticky = {
+        "$claude-3.7-sonnet",
+        "#buffer",
+        "#files",
+      },
       window = {
         width = 64,
       },
