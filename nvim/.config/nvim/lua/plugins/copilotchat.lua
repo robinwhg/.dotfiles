@@ -8,9 +8,7 @@ return {
       answer_header = "  Copilot ",
       model = "claude-3.7-sonnet",
       sticky = {
-        "$claude-3.7-sonnet",
-        "#buffer",
-        "#files",
+        "$claude-3.5-sonnet",
       },
       window = {
         width = 64,
