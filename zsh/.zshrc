@@ -64,6 +64,8 @@ then
   tmux new-session -A -s main
 fi
 
+PATH=$PATH:/usr/local/go/bin
+
 # pnpm
 export PNPM_HOME="/home/robin/.local/share/pnpm"
 case ":$PATH:" in
