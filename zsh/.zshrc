@@ -3,12 +3,11 @@ export EDITOR=nvim
 export VISUAL="$EDITOR"
 
 # Aliases
-alias ll="ls -l | batcat"
-alias la="ls -la | batcat"
+alias ll="ls -l"
+alias la="ls -la"
 alias tm="tmux"
 alias nv="nvim"
 alias lg="lazygit"
-alias bat="batcat"
 
 # Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
