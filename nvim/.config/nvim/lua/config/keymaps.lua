@@ -11,7 +11,7 @@ map("n", "<S-l>", "$", { silent = true }) -- move to end of line
 map("n", "<S-h>", "^", { silent = true }) -- move to beginning of line
 
 map("n", "<C-q>", "<cmd>qa<cr>", { desc = "Quit" }) -- quicker `<leader>qq`
-map("n", "<C-y>", "<cmd>e #<cr>", { desc = "Last Buffer" }) -- quicker `<leader>bb`
+map("n", "<C-n>", "<cmd>e #<cr>", { desc = "Last Buffer" }) -- quicker `<leader>bb`
 
 local del = vim.keymap.del
 
