@@ -6,9 +6,11 @@ return {
       auto_insert_mode = true,
       question_header = "  " .. user .. " ",
       answer_header = "  Copilot ",
-      model = "claude-3.7-sonnet",
+      model = "gpt-4.1",
       sticky = {
-        "$claude-3.5-sonnet",
+        "claude-3.7-sonnet",
+        "#buffers:visible",
+        "Be concise and only provide the code I asked you for.",
       },
       window = {
         width = 64,
