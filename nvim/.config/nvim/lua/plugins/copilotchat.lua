@@ -9,7 +9,7 @@ return {
       model = "gpt-4.1",
       sticky = {
         "claude-3.7-sonnet",
-        "#buffers:visible",
+        "#buffer",
         "Be concise and only provide the code I asked you for.",
       },
       window = {
