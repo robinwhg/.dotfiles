@@ -63,7 +63,17 @@ then
   tmux new-session -A -s main
 fi
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 PATH=$PATH:/usr/local/go/bin
+
+PATH=$PATH:/home/.cargo/bin
 
 # pnpm
 export PNPM_HOME="/home/robin/.local/share/pnpm"
@@ -72,6 +82,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

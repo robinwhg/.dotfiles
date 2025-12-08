@@ -1,6 +1,6 @@
 .DS_Store
 **/plugin/
-tmux/.config/tmux/plugins/
+**/plugins/
 **/ignore
 nvim/**/lazy-lock.json
 nvim/.config/nvim/spell/
