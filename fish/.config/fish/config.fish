@@ -11,7 +11,6 @@ alias lg="lazygit"
 
 if status is-interactive
     set -g fish_greeting ''
-    fzf --fish | source
     source ~/.config/fish/themes/tokyonight_moon.fish
 
     set -g fish_key_bindings fish_vi_key_bindings
