@@ -1,5 +1,5 @@
 set -U EDITOR nvim
-set -U VISUAL $EDITOR
+set -U VISUAL nvim
 
 set -x PATH $PATH ~/.cargo/bin /usr/local/go/bin ~/.local/share/pnpm
 
