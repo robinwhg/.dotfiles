@@ -53,6 +53,7 @@
   //     "ctrl-n": "editor::AcceptEditPrediction", // like fish
   //   },
   // },
+  // https://zed.dev/docs/ai/edit-prediction#edit-predictions-keybinding
   {
     "context": "Editor && !menu",
     "bindings": {
