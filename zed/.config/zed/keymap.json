@@ -69,10 +69,22 @@
   {
     "context": "vim_mode == normal && !menu",
     "bindings": {
-      "shift-y": ["workspace::SendKeystrokes", "y $"], // Use neovim's yank behavior: yank to end of line.
-      ";": ["workspace::SendKeystrokes", ":"],
-      "L": ["workspace::SendKeystrokes", "$"],
-      "H": ["workspace::SendKeystrokes", "^"],
+      "shift-y": [
+        "workspace::SendKeystrokes",
+        "y $"
+      ], // Use neovim's yank behavior: yank to end of line.
+      ";": [
+        "workspace::SendKeystrokes",
+        ":"
+      ],
+      "L": [
+        "workspace::SendKeystrokes",
+        "$"
+      ],
+      "H": [
+        "workspace::SendKeystrokes",
+        "^"
+      ],
     },
   },
   {
