@@ -32,6 +32,7 @@
     "context": "Workspace",
     "bindings": {
       "ctrl-n": "tab_switcher::Toggle",
+      "ctrl-t": "terminal_panel::Toggle",
     },
   },
   {
