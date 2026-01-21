@@ -58,10 +58,10 @@ PROMPT="%{$fg[blue]%}%n@%m % %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%
 PROMPT+="\$vcs_info_msg_0_ "
 
 # Always start tmux
-if [ -z "$TMUX" ]
-then
-  tmux new-session -A -s main
-fi
+# if [ -z "$TMUX" ]
+# then
+#   tmux new-session -A -s main
+# fi
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
