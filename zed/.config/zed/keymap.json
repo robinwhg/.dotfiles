@@ -48,13 +48,13 @@
       "alt-k": "editor::MoveLineUp",
     },
   },
-  // {
-  //   "context": "(Editor && edit_prediction) || (Editor && edit_prediction_conflict)",
-  //   "bindings": {
-  //     "ctrl-n": "editor::AcceptEditPrediction", // like fish
-  //   },
-  // },
-  // https://zed.dev/docs/ai/edit-prediction#edit-predictions-keybinding
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "enter": "editor::Newline",
+      "tab": "editor::ConfirmCompletion",
+    }
+  },
   {
     "context": "Editor && !menu",
     "bindings": {
