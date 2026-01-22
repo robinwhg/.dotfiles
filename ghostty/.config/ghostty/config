@@ -6,3 +6,4 @@ window-padding-balance = true
 confirm-close-surface = false
 bell-features = no-audio, no-attention, no-title
 gtk-titlebar-hide-when-maximized = true
+command = tmux new-session -A -s main
