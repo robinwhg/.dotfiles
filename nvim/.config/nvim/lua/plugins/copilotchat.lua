@@ -6,12 +6,11 @@ return {
       auto_insert_mode = true,
       question_header = "  " .. user .. " ",
       answer_header = "  Copilot ",
-      model = "gpt-4.1",
+      model = "gpt-5.1",
       sticky = {
-        "#buffer",
       },
       window = {
-        width = 64,
+        width = 80,
       },
     }
   end,
