@@ -1,22 +1,28 @@
 return {
-  "neovim/nvim-lspconfig",
-  opts = function(_, opts)
-    table.insert(opts.servers.vtsls.filetypes, "vue")
-    LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
-      {
-        name = "@vue/typescript-plugin",
-        location = LazyVim.get_pkg_path("vue-language-server", "/node_modules/@vue/language-server"),
-        languages = { "vue" },
-        configNamespace = "typescript",
-        enableForWorkspaceTypeScriptVersions = true,
-      },
-    })
-    opts.diagnostics.float = {
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
-    }
-  end,
+  {
+    "neovim/nvim-lspconfig",
+    opts = function(_, opts)
+      opts.diagnostics.float = {
+        style = "minimal",
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = "",
+      }
+
+      opts.servers.vtsls = vim.tbl_deep_extend("force", opts.servers.vtsls or {}, {
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+      })
+
+      opts.servers.vue_ls = vim.tbl_deep_extend("force", opts.servers.vue_ls or {}, {
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+      })
+    end,
+  },
 }
