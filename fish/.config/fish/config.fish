@@ -9,6 +9,9 @@ alias tm="tmux"
 alias nv="nvim"
 alias lg="lazygit"
 
+# Set up fzf key bindings
+fzf --fish | source
+
 if status is-interactive
     set -g fish_greeting ''
     source ~/.config/fish/themes/tokyonight_moon.fish
