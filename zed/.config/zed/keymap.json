@@ -1,0 +1,105 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "(Editor && (showing_code_actions || showing_completions))",
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-n": "tab_switcher::Toggle",
+      "ctrl-t": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "RunModal",
+    "bindings": {
+      "ctrl-n": "pane::ActivateNextItem",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "enter": "editor::Newline",
+      "tab": "editor::ConfirmCompletion",
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-s": "workspace::Save", // vim default: show signature
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Put key bindings here if you want them to work in normal & visual mode.
+    },
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "shift-y": [
+        "workspace::SendKeystrokes",
+        "y $"
+      ], // Use neovim's yank behavior: yank to end of line.
+      ";": [
+        "workspace::SendKeystrokes",
+        ":"
+      ],
+      "L": [
+        "workspace::SendKeystrokes",
+        "$"
+      ],
+      "H": [
+        "workspace::SendKeystrokes",
+        "^"
+      ],
+    },
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore", // In insert mode, make jk escape to normal mode.
+    },
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Put key bindings here (in addition to the context above) if you want them to
+      // work when no editor exists.
+      // "space f": "file_finder::Toggle"
+    },
+  },
+]
