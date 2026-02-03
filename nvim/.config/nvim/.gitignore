@@ -6,4 +6,6 @@ debug
 foo.*
 *.log
 data
-!plugins/
+lazy-lock.json
+spell/
+

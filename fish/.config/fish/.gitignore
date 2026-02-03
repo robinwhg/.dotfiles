@@ -1,6 +1,6 @@
-completions/*
-conf.d/*
-functions/*
+completions
+conf.d
+functions
 fish_variables
 
-!/functions/fish_user_key_bindings.fish
+!functions/fish_user_key_bindings.fish
