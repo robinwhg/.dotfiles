@@ -1,5 +1,15 @@
 function dev --description "Create a tmux dev session named after the current directory"
-    set -l session_name (basename (pwd))
+    # Use provided path or current directory
+    set -l target_dir (pwd)
+    if test (count $argv) -ge 1
+        set target_dir (realpath $argv[1])
+        if not test -d "$target_dir"
+            echo "Error: '$argv[1]' is not a valid directory"
+            return 1
+        end
+    end
+
+    set -l session_name (basename "$target_dir")
 
     # Check if session already exists
     if tmux has-session -t "$session_name" 2>/dev/null
@@ -13,23 +23,22 @@ function dev --description "Create a tmux dev session named after the current di
     end
 
     # Create new session with first window (shell)
-    tmux new-session -d -s "$session_name" -n shell
+    tmux new-session -d -s "$session_name" -n shell -c "$target_dir"
 
-    # Create window for neovim
-    tmux new-window -t "$session_name" -n nvim
-    tmux send-keys -t "$session_name:nvim" "nvim" Enter
+    # Create window for neovim with splits
+    tmux new-window -t "$session_name" -n nvim -c "$target_dir"
+    tmux send-keys -t "$session_name:nvim" nvim Enter
+    # Split vertically to create pane below (1/3 height), then split that horizontally
+    tmux split-window -t "$session_name:nvim" -v -p 33 -c "$target_dir"
+    tmux split-window -t "$session_name:nvim" -h -c "$target_dir"
 
     # Create window for opencode
-    tmux new-window -t "$session_name" -n opencode
-    tmux send-keys -t "$session_name:opencode" "opencode" Enter
-
-    # Create window for lazygit
-    tmux new-window -t "$session_name" -n lazygit
-    tmux send-keys -t "$session_name:lazygit" "lazygit" Enter
+    tmux new-window -t "$session_name" -n opencode -c "$target_dir"
+    tmux send-keys -t "$session_name:opencode" opencode Enter
 
     # Create window for yazi
-    tmux new-window -t "$session_name" -n yazi
-    tmux send-keys -t "$session_name:yazi" "yazi" Enter
+    tmux new-window -t "$session_name" -n yazi -c "$target_dir"
+    tmux send-keys -t "$session_name:yazi" yazi Enter
 
     # Select the first window (shell)
     tmux select-window -t "$session_name:shell"
