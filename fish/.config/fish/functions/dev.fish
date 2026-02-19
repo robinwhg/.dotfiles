@@ -28,13 +28,14 @@ function dev --description "Create a tmux dev session named after the current di
     # Create window for neovim with splits
     tmux new-window -t "$session_name" -n nvim -c "$target_dir"
     tmux send-keys -t "$session_name:nvim" nvim Enter
-    # Split vertically to create pane below (1/3 height), then split that horizontally
-    tmux split-window -t "$session_name:nvim" -v -p 33 -c "$target_dir"
-    tmux split-window -t "$session_name:nvim" -h -c "$target_dir"
 
     # Create window for opencode
     tmux new-window -t "$session_name" -n opencode -c "$target_dir"
     tmux send-keys -t "$session_name:opencode" opencode Enter
+
+    # Create window for lazygit
+    tmux new-window -t "$session_name" -n lazygit -c "$target_dir"
+    tmux send-keys -t "$session_name:lazygit" lazygit Enter
 
     # Create window for yazi
     tmux new-window -t "$session_name" -n yazi -c "$target_dir"
